@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" className="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>VT Mart | Premium Dry Fruits from Vishal Traders</title>
+    <meta name="description" content="Discover the finest selection of premium dry fruits, nuts, and seeds from Vishal Traders. High quality almonds, cashews, pistachios, and more." />
+    <meta name="keywords" content="dry fruits, premium dry fruits, almonds, cashews, pistachios, raisins, vishal traders, vt mart, healthy snacks" />
+    <meta property="og:title" content="VT Mart | Premium Dry Fruits" />
+    <meta property="og:description" content="Discover the finest selection of premium dry fruits, nuts, and seeds from Vishal Traders." />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <style>
+      #initial-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        z-index: 9999;
+        flex-direction: column;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      .spinner {
+        width: 48px;
+        height: 48px;
+        border: 4px solid #f3f4f6;
+        border-top: 4px solid #f97316; /* Brand orange */
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 16px;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .loader-text {
+        color: #4b5563;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+    </style>
+    <div id="root">
+      <div id="initial-loader">
+        <div class="spinner"></div>
+        <div class="loader-text">Loading VT Mart...</div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
+
+
+<!-- <!doctype html>
+<html lang="en" className="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>VT Mart | Premium Dry Fruits from Vishal Traders</title>
+    <meta name="description" content="Discover the finest selection of premium dry fruits, nuts, and seeds from Vishal Traders. High quality almonds, cashews, pistachios, and more." />
+    <meta name="keywords" content="dry fruits, premium dry fruits, almonds, cashews, pistachios, raisins, vishal traders, vt mart, healthy snacks" />
+    <meta property="og:title" content="VT Mart | Premium Dry Fruits" />
+    <meta property="og:description" content="Discover the finest selection of premium dry fruits, nuts, and seeds from Vishal Traders." />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+ -->
