@@ -38,7 +38,7 @@ export default function WhyChooseUs() {
             viewport={{ once: true }}
             className="text-3xl sm:text-4xl font-serif font-bold text-gray-900 mb-4"
           >
-            Why Choose <span className="text-brand-600">VT Mart</span>?
+            Why Choose <span className="text-brand-600">Vishal Trading</span>?
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
