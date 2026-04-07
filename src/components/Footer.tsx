@@ -10,10 +10,10 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
             <a href="#home" className="flex items-center gap-2 mb-6">
               <ShoppingBag className="w-8 h-8 text-brand-600" />
-              <span className="font-serif text-2xl font-bold text-brand-900">VT Mart</span>
+              <span className="font-serif text-2xl font-bold text-brand-900">Vishal Trading</span>
             </a>
             <p className="text-gray-600 text-sm leading-relaxed mb-6">
-              Premium dry fruits from Vishal Traders. Sourced with care, delivered with love. Your health is our priority.
+              Premium dry fruits from Vishal Trading. Sourced with care, delivered with love. Your health is our priority.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-brand-600 hover:text-white transition-colors">
@@ -64,8 +64,8 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-gray-200 text-center text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>&copy; {new Date().getFullYear()} Vishal Traders. All rights reserved.</p>
-          <p>Designed for VT Mart</p>
+          <p>&copy; {new Date().getFullYear()} Vishal Trading. All rights reserved.</p>
+          <p>Designed for Tusmit Shah</p>
         </div>
       </div>
     </footer>

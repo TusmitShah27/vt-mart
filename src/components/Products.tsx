@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { MessageCircle } from "lucide-react";
+import { supabase } from "../lib/supabase";
 
 interface Product {
   id: number;
@@ -23,18 +24,40 @@ export default function Products({ onInquire }: { onInquire: (productName: strin
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   useEffect(() => {
-    fetch("/api/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-        const uniqueCategories = ["All", ...new Set(data.map((p: Product) => p.category))];
+    const fetchProducts = async () => {
+      try {
+        // Fetch categories and products from Supabase
+        const [catRes, prodRes] = await Promise.all([
+          supabase.from('categories').select('*'),
+          supabase.from('products').select('*').eq('is_active', true)
+        ]);
+
+        if (prodRes.error) throw prodRes.error;
+
+        const categoriesMap = new Map(catRes.data?.map(c => [c.id, c.name]) || []);
+
+        const formattedProducts = (prodRes.data || []).map(p => ({
+          id: p.id,
+          product_name: p.name || p.product_name,
+          category: categoriesMap.get(p.category_id) || p.category || 'Uncategorized',
+          subcategory: p.subcategory || '',
+          price: p.price,
+          image_url: p.image_url,
+          description: p.description || '',
+          is_featured: p.is_active || p.is_featured
+        }));
+
+        setProducts(formattedProducts);
+        const uniqueCategories = ["All", ...new Set(formattedProducts.map(p => p.category))];
         setCategories(uniqueCategories as string[]);
+      } catch (err) {
+        console.error("Failed to fetch products from Supabase:", err);
+      } finally {
         setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Failed to fetch products:", err);
-        setLoading(false);
-      });
+      }
+    };
+
+    fetchProducts();
   }, []);
 
   const filteredProducts = activeCategory === "All" 

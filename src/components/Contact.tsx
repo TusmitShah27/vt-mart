@@ -79,7 +79,7 @@ export default function Contact({ initialProduct = "" }: { initialProduct?: stri
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-6">
-              Get in Touch with <span className="text-brand-400">Vishal Traders</span>
+              Get in Touch with <span className="text-brand-400">Vishal Trading</span>
             </h2>
             <p className="text-brand-100 mb-10 text-lg max-w-md">
               Have a question about our products or want to place a bulk order? Fill out the form or contact us directly.

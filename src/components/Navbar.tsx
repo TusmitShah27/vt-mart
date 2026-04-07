@@ -31,7 +31,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <a href="#home" className="flex items-center gap-2">
           <ShoppingBag className="w-8 h-8 text-brand-600" />
-          <span className="font-serif text-2xl font-bold text-brand-900">VT Mart</span>
+          <span className="font-serif text-2xl font-bold text-brand-900">Vishal Trading</span>
         </a>
 
         {/* Desktop Nav */}
